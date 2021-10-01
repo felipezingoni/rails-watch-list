@@ -1,0 +1,50 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <%= image_tag "https://anagrama-cdn.sfo2.cdn.digitaloceanspaces.com/assets/assets/assets/3917/normal/B3-01.jpg?1627337990" %>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Home", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Messages", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= image_tag "https://images.unsplash.com/photo-1560787313-5dff3307e257?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Action", "#", class: "dropdown-item" %>
+          <%= link_to "Another action", "#", class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1598814996357-799cbb953998?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);">
+  <div class="container">
+    <h1><strong>Cinema</strong></strong>!</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+    <a class="btn btn-flat" href="#">List of movies</a>
+  </div>
+</div>
+
+<div class="container">
+<h3>My List:</h3>
+</div>
+
+<div class="container" id="container-cards">
+<div class="cards">
+  <% @lists.each do |list|%>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1585647347384-2593bc35786b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80)">
+   <h4><%= link_to list.name, list_path(list) %></h4>
+  </div>
+  <% end%>
+</div>
+</div>
